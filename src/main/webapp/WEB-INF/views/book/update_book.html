@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content">
+    <form class="main" method="post" th:action="@{/book/update}">
+      <div class="input">
+        <input
+          id="b_code"
+          name="b_code"
+          placeholder="도서코드"
+          th:value="${BOOK.b_code }"
+        />
+        <input
+          id="b_name"
+          name="b_name"
+          placeholder="도서명"
+          th:value="${BOOK.b_name }"
+        />
+        <input
+          id="b_auther"
+          name="b_auther"
+          placeholder="저자"
+          th:value="${BOOK.b_auther }"
+        />
+        <input
+          id="b_comp"
+          name="b_comp"
+          placeholder="출판사"
+          th:value="${BOOK.b_comp }"
+        />
+        <input
+          id="b_year"
+          name="b_year"
+          placeholder="구입연도"
+          th:value="${BOOK.b_year }"
+        />
+        <input
+          id="b_iprice"
+          name="b_iprice"
+          placeholder="구입가격"
+          th:value="${BOOK.b_iprice }"
+        />
+        <input
+          id="b_rprice"
+          name="b_rprice"
+          placeholder="대여가격"
+          th:value="${BOOK.b_rprice }"
+        />
+        <input type="hidden"
+          id="b_stop"
+          name="b_stop"
+          placeholder="사용가능"
+          th:value="${BOOK.b_stop }"
+        />
+
+      <div class="input button">
+        <button type="button" id="btn_save">저장</button>
+      </div>
+      <div class="input button">
+        <button type="button" id="btn_delete">사용불가</button>
+      </div>
+      
+    </form>
+  </section>
+</html>

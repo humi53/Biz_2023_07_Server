@@ -1,0 +1,31 @@
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content" class="user">
+    <form class="user" method="post" th:action="@{/user/input}">
+      <div>
+        <label for="u_code">회원코드</label>
+        <input type="text" id="u_code" name="u_code" />
+      </div>
+      <div>
+        <label for="u_name">회원명</label>
+        <input type="text" id="u_name" name="u_name" />
+      </div>
+      <div>
+        <label for="u_tel">전화번호</label>
+        <input type="phone" id="u_tel" name="u_tel" />
+      </div>
+      <div>
+        <label for="u_addr">주소</label>
+        <input type="text" id="u_addr" name="u_addr" />
+      </div>
+      <div class="input button">
+        <button type="button" id="btn_usersave">회원가입</button>
+      </div>
+    </form>
+    <th:block th:replace="~{./user/user_list :: main_list}" />
+  </section>
+</html>

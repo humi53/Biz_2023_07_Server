@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빛고을 Book Rent Management System 2023</title>
+    <link th:href="@{/static/css/main.css}" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script th:inline="javascript">
+      var rootPath = /*[[@{/}]]*/
+    </script>
+    <script th:src="@{/static/js/main_nav.js}"></script>
+    <script th:src="@{/static/js/book_input.js}"></script>
   </head>
   <body>
-    <h1>또다른 시작이군요.</h1>
+    <header th:replace="~{include :: header}"></header>
+    <nav th:replace="~{include :: nav}"></nav>
+    <section class="main" layout:fragment="content">
+      <h1>또다른 시작이군요.</h1>
+    </section>
+    <footer th:replace="~{include :: footer}"></footer>
   </body>
 </html>

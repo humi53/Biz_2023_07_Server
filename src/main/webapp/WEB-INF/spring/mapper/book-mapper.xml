@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.books.Dao.BookDao">
+ 
+ 	<select id="selectAll">
+ 		SELECT * FROM tbl_books
+ 	</select>
+ 	
+ 	<insert id="insert">
+ 	INSERT INTO tbl_books(
+		b_code,		b_name,		b_auther,		b_comp,
+		b_year,		b_iprice,		b_rprice,		b_stop
+		)
+	VALUES(
+		#{b_code},		#{b_name},		#{b_auther},		#{b_comp},
+		#{b_year},		#{b_iprice},		#{b_rprice},		#{b_stop}
+		)
+ 	</insert>
+
+ 	<select id="findByBcode">
+ 		SELECT * FROM tbl_books
+		WHERE b_code = #{b_code};
+ 	</select>
+ 	
+ 	<select id="bnameCount">
+ 		SELECT count(*) FROM tbl_books
+		WHERE b_name = #{b_name};
+ 	</select>
+ 	<select id="countBcode">
+ 		SELECT count(*) FROM tbl_books
+		WHERE b_code = #{b_code};
+ 	</select>
+ 	
+ 	<select id="selectBnameBauther">
+	 	SELECT * FROM tbl_books
+		WHERE b_name = #{b_name} OR b_auther = #{b_auther};
+ 	</select>
+ 
+ 	<update id="update">
+ 		UPDATE tbl_books 
+		SET
+			b_name = #{b_name},
+			b_auther = #{b_auther},
+			b_comp = #{b_comp},
+			b_year = #{b_year},
+			b_iprice = #{b_iprice},
+			b_rprice = #{b_rprice},
+			b_stop = #{b_stop}
+		WHERE b_code = #{b_code}
+ 	</update>
+ </mapper> 

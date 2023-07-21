@@ -1,0 +1,52 @@
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content" class="user">
+    <form class="user" method="post" th:action="@{/user/update}">
+      <div>
+        <label for="u_code">회원코드</label>
+        <input
+          type="text"
+          id="u_code"
+          name="u_code"
+          th:value="${USER.u_code }"
+        />
+      </div>
+      <div>
+        <label for="u_name">회원명</label>
+        <input
+          type="text"
+          id="u_name"
+          name="u_name"
+          th:value="${USER.u_name }"
+        />
+      </div>
+      <div>
+        <label for="u_tel">전화번호</label>
+        <input type="phone" id="u_tel" name="u_tel" th:value="${USER.u_tel }" />
+      </div>
+      <div>
+        <label for="u_addr">주소</label>
+        <input
+          type="text"
+          id="u_addr"
+          name="u_addr"
+          th:value="${USER.u_addr }"
+        />
+      </div>
+      <input
+        type="hidden"
+        id="u_stop"
+        name="u_stop"
+        th:value="${USER.u_stop }"
+      />
+      <div class="input button">
+        <button type="button" id="btn_usersave">저장</button>
+        <button type="button" id="btn_userdelete">삭제</button>
+      </div>
+    </form>
+  </section>
+</html>

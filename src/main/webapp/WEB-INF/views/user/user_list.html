@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <th:block th:fragment="main_list">
+    <table class="main user">
+      <tr>
+        <th>회원코드</th>
+        <th>회원명</th>
+        <th>전화번호</th>
+        <th>주소</th>
+      </tr>
+      <tr th:each="DTO : ${USER_LIST}">
+        <td th:text="${DTO.u_code}">회원코드</td>
+        <td class="l_uname" th:text="${DTO.u_name}">회원명</td>
+        <td th:text="${DTO.u_tel}">전화번호</td>
+        <td th:text="${DTO.u_addr}">주소</td>
+      </tr>
+    </table>
+  </th:block>
+</html>
