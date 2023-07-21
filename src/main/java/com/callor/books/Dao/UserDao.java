@@ -2,7 +2,8 @@ package com.callor.books.Dao;
 
 import java.util.List;
 
-import com.callor.books.model.BookDto;
+import org.apache.ibatis.annotations.Param;
+
 import com.callor.books.model.UserDto;
 
 public interface UserDao {
@@ -19,7 +20,7 @@ public interface UserDao {
 
 	public int update(UserDto userDto);
 	
-	public List<UserDto> findByUnameUtel(String u_name, String u_tel);
+	public List<UserDto> findByUnameUtel(@Param("u_name") String u_name, @Param("u_tel") String u_tel);
 	
 	
 

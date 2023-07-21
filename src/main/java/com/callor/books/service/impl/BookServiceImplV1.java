@@ -21,12 +21,12 @@ public class BookServiceImplV1 implements BookService{
 		String bookCode = bookDto.getB_code();
 		String bookName = bookDto.getB_name();
 		
-		if(bookDao.bcodeCount(bookCode) >= 1) {
-			throw new Exception("ERROR_BCODE");
-		}
-		if(bookDao.bnameCount(bookName) >= 1) {
-			throw new Exception("ERROR_NAME");
-		}
+//		if(bookDao.bcodeCount(bookCode) >= 1) {
+//			throw new Exception("ERRBCODE");
+//		}
+//		if(bookDao.bnameCount(bookName) >= 1) {
+//			throw new Exception("ERRNAME");
+//		}
 		bookDto.setB_stop("Y");
 		return bookDao.insert(bookDto);
 	}

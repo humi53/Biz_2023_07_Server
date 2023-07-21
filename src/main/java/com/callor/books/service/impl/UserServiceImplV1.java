@@ -8,6 +8,8 @@ import com.callor.books.Dao.UserDao;
 import com.callor.books.model.UserDto;
 import com.callor.books.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 public class UserServiceImplV1 implements UserService{
 
@@ -22,12 +24,12 @@ public class UserServiceImplV1 implements UserService{
 		
 		String userName = userDto.getU_name();
 		String userTel = userDto.getU_tel();
-		
+		userName = "이몽룡";
+		userTel = "0000";
 		List<UserDto> userList = 
 				userDao.findByUnameUtel(userName, userTel);
-		
 		if(userList.isEmpty()){
-			throw new Exception("ERROR_NAMETEL");
+			throw new Exception("NAMETEL");
 		}
 		
 		userDto.setU_stop("Y");

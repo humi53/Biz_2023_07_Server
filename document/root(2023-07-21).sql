@@ -66,3 +66,5 @@ VALUES("000001","홍길자", "010-1111-1111", "서울시 관악구", "Y");
 
 SELECT * FROM tbl_users WHERE u_code = "000001";
 SELECT * FROM tbl_users;
+SELECT * FROM tbl_users 
+ 		WHERE u_name = "홍길동" AND u_tel = "111";
